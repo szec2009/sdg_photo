@@ -1,0 +1,7 @@
+{
+  "name": "sdg_photo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
