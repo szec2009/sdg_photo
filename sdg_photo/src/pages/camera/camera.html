@@ -1,0 +1,35 @@
+
+<ion-content class="background-color-transparent" (ionScroll)="false">
+    <div class="col-12 pageTitle" id="pageTitle">
+        <button (click)="GoToHome()" class="back" style="background-color: transparent">
+            <img [src]="this.btnBackImg" style="margin-top: -3vh;" />
+        </button>
+        <button (click)="CameraChangeLangClick()" class="language" style="display: none;">
+            {{this.btnLang}}
+        </button>
+        {{this.btnHome}}
+    </div>
+
+    <div class="cameraView">
+        <img id="cameraView" />
+    </div>
+
+    <div class="col-12 footerButtonPlane">
+        <ion-row style="margin-top: 3vh;">
+            <ion-col no-lines no-padding text-left col-4>
+            </ion-col>
+            <ion-col no-lines no-padding text-center col-4>
+                <button (click)="TakePhoto()" ion-button class="takephoto" style="
+    background: url('assets/imgs/camera/takephoto.png'); background-size: 100% 100%; background-repeat: no-repeat;">
+
+                </button>
+            </ion-col>
+            <ion-col no-lines no-padding text-right col-4>
+                <button (click)="SwitchCamera()" ion-button class="swidthcamera" style="
+    background: url('assets/imgs/camera/swidthcamera.png'); background-size: 100% 100%; background-repeat: no-repeat;">
+
+                </button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

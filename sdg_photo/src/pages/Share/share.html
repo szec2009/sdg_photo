@@ -1,0 +1,51 @@
+<ion-content (ionScroll)="false">
+    <div class="col-12 pageTitle">
+        <button (click)="GoToHome()" class="back" style="background-color: transparent">
+            <img [src]="this.btnBackImg" style="margin-top: -3vh;" />
+        </button>
+        <button (click)="CameraChangeLangClick()" class="language" style="display: none;">
+            {{this.btnLang}}
+        </button>
+        {{this.btnHome}}
+    </div>
+
+    <div class="imagePreview">
+        <ion-row>
+            <ion-col no-lines no-padding text-center col-12 class="sharemsg">
+                {{this.btnUpload}}
+            </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 3vh;">
+            <ion-col no-lines no-padding text-center col-12>
+                <div class="takenImage">
+                    <img [src]="this.frameUrl" style="height: 100%; position: absolute; z-index: 10; left: 25vw;" />
+                    <div>
+
+                    </div>
+                    <img [src]="this.imageUrl" style="width: 100%; height: 100%; z-index: 5;" />
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 3vh;">
+            <ion-col no-lines no-padding text-center col-12>
+                <button ion-button class="takeOther" (click)="TakePhoto()">
+                    {{this.btnTakeOther}}
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 3vh;">
+            <ion-col no-lines no-padding text-center col-12>
+                {{this.btnOr}}
+            </ion-col>
+        </ion-row>
+    </div>
+    <div class="col-12 footerButtonPlane">
+
+        <img [src]="this.titleUrl" style="width: 100vw; z-index: 5;" />
+        <button (click)="KnowMore()" class="knowMore">
+            <img src="/assets/imgs/share/down.png" style="width:50%; margin: auto; opacity: 0.7" />
+            <br />
+            {{this.btnKnowMore}}
+        </button>
+    </div>
+</ion-content>

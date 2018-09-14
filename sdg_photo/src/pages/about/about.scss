@@ -1,0 +1,84 @@
+page-about {
+  .pageTitle
+  {
+    height: 10vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 3vh;
+    font-size: 24px;
+  }
+
+  .back
+  {
+    position: absolute;
+    left: 0;
+    height: 3vh;
+    width: 11vh;
+    margin-top: 0.4vh;
+    margin-left: 4vw;
+  }
+
+  .language{
+    position: absolute;
+    right: 0;
+    height: 3vh;
+    width: 6vh;
+    margin-top: 0.4vh;
+    margin-right: 4vw;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+  }
+
+  .imageSilder
+  {
+    height: 50vh;
+    background-color: transparent;
+  }
+
+  .imageSilder .next
+  {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: 35%;
+  }
+
+  .imageSilder .prev
+  {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 35%;
+  }
+
+  .imageSilder .backPreview
+  {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 30%;
+  }
+
+  .aboutContent
+  {
+  }
+
+  .contentTitle
+  {
+    text-align: left;
+    font-size: 6vw;
+    font-weight: bold;
+    padding: 0px 15px;
+  }
+
+  .contentDescription
+  {
+    text-align: left;
+    font-size: 4vw;
+    line-height: 3vh;
+    padding: 0px 15px;
+    white-space: pre-wrap;
+  }
+}

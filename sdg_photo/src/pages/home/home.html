@@ -1,14 +1,36 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content (ionScroll)="false">
+  <!--<img class="bgcolor" src="assets/imgs/home/background.png">-->
+  <div class="bgcolor" style="background: url('assets/imgs/home/background.png'); background-size: 100% 100%; background-repeat: no-repeat;">
+    <div class="homeLogo" style="background: url('assets/imgs/home/home_logo.png'); background-size: contain; background-repeat: no-repeat;"></div>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <div class="homeButtonPlane">
+      <ion-row>
+        <ion-col no-lines no-padding text-center col-12>
+          <button ion-button class="start" (click)="GoToCamera()">
+            {{this.btnStart}}
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col no-lines no-padding text-center col-12>
+          <button (click)="GoToAbout()" ion-button class="about" >
+            {{this.btnAbout}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="homeFooterPlane" style="display: none;">
+      <ion-row>
+        <ion-col no-lines no-padding text-left col-6>
+          <a>
+            {{this.btnNeedHelp}}</a>
+        </ion-col>
+        <ion-col no-lines no-padding text-right col-6>
+          <a>
+            {{this.btnContactUs}}</a>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
 </ion-content>

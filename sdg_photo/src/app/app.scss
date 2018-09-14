@@ -1,5 +1,8 @@
 // http://ionicframework.com/docs/theming/
 
+ion-content:not(.background-color-transparent) {
+  background-color: #fff !important;
+}
 
 // App Global Sass
 // --------------------------------------------------

@@ -1,0 +1,100 @@
+<ion-content style="background-color: white">
+    <div class="col-12 pageTitle">
+        <button (click)="GoToHome()" class="back" style="background-color: transparent">
+            <img [src]="this.btnBackImg" style="margin-top: -3vh;" />
+        </button>
+        <button (click)="CameraChangeLangClick()" class="language" style="display: none;">
+            {{this.btnLang}}
+        </button>
+        {{this.btnHome}}
+    </div>
+    <div>
+
+    </div>
+    <ion-row>
+        <ion-col no-lines no-padding text-center col-12>
+            <div class="imageSilder">
+
+                <div class="backPreview">
+                    <button (click)="GoToShare()" style="background-color: transparent">
+                        <img src="/assets/imgs/about/up.png" style="width:50%; margin: auto; opacity: 0.7" />
+                    </button>
+                </div>
+                <div class="prev">
+                    <button style="background-color: transparent" (click)="SliderPrev()">
+                        <img src="/assets/imgs/about/left.png" style="margin-left: -30px; opacity: 0.7" />
+                    </button>
+                </div>
+                <div class="next">
+                    <button style="background-color: transparent" (click)="SliderNext()">
+                        <img src="/assets/imgs/about/right.png" style="margin-right: -30px; opacity: 0.7" />
+                    </button>
+                </div>
+                <ion-slides (ionSlideDidChange)="slideChanged()">
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/1.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/2.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/3.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/4.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/5.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/6.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/7.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/8.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/9.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/10.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/11.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/12.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/13.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/14.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/15.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/16.png" />
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="/assets/imgs/logo_square/17.png" />
+                    </ion-slide>
+                </ion-slides>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row style="margin-top: 3vh;">
+        <ion-col no-lines no-padding text-center col-12>
+            <div class="aboutConent">
+                <div class="contentTitle" id="contentTitle">
+                    {{this.title}}
+                </div>
+                <div class="contentDescription">{{this.description}}</div>
+            </div>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

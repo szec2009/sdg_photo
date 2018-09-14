@@ -1,0 +1,67 @@
+page-camera {
+  $background-color: transparent;
+  .scroll-content {
+    overflow-y: hidden !important;
+    background-color: black;
+  }
+  .pageTitle
+  {
+    height: 10vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 3vh;
+    font-size: 24px;
+  }
+
+  .back
+  {
+    position: absolute;
+    left: 0;
+    height: 3vh;
+    width: 11vh;
+    margin-top: 0.4vh;
+    margin-left: 4vw;
+  }
+
+  .language{
+    position: absolute;
+    right: 0;
+    height: 3vh;
+    width: 6vh;
+    margin-top: 0.4vh;
+    margin-right: 4vw;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+  }
+
+  .cameraView
+  {
+    height: 70vh;
+    background-color: black;
+  }
+
+  .footerButtonPlane
+  {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: black;
+    height: 20vh;
+  }
+
+  .takephoto
+  {
+    margin: auto;
+    width: 13vh;
+    height: 13vh;
+  }
+
+  .swidthcamera
+  {
+    margin: 3vh;
+    width: 6vh;
+    height: 6vh;
+  }
+}

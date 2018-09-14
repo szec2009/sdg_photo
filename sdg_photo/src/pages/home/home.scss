@@ -1,3 +1,74 @@
 page-home {
+  .scroll-content {
+    overflow-y: hidden !important;
+  }
+  .bgcolor
+  {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+  }
+  .homeLogo
+  {
+    width: 70vw;
+    height: 70vw;
+    position: relative;
+    top: 15vh;
+    margin: auto;
+  }
 
+  .homeButtonPlane
+  {
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+  }
+
+  .homeButtonPlane .start
+  {
+    margin: auto;
+    margin-top: 15px;
+    width: 70%;
+    border: 1px solid #2881d4;
+    border-radius: 0px;
+    text-align: center;
+    padding: 15px;
+    background-color: white;
+    color: #2881d4;
+  }
+
+  .trest
+  {
+    background-color: #ec723b;
+  }
+
+  .homeButtonPlane .about
+  {
+    margin: auto;
+    margin-top: 15px;
+    width: 70%;
+    border: 1px solid #2881d4;
+    border-radius: 0px;
+    background-color: #2881d4;
+    text-align: center;
+    padding: 15px;
+    color: white;
+  }
+
+  .homeFooterPlane
+  {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 15px 30px;
+    margin: auto;
+    color: #555;
+  }
+
+  .homeFooterPlane a
+  {
+    color: #a3a4a4;
+  }
 }
