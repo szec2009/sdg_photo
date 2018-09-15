@@ -8,6 +8,7 @@ import {HTTP} from "@ionic-native/http";
 
 import {Storage} from "@ionic/storage";
 import { HttpClient, HttpRequest, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 import {SharePage} from "../Share/share";
 import {PreviewPage} from "../preview/preview";
@@ -30,6 +31,7 @@ export class HomePage {
               private http:HTTP
               ) {
     var bgImageUrl = "image/background.png";
+      this.storage.set("lang", "EN");
       this.storage.get('lang').then((val) => {
           if(val == null)
           {
@@ -63,8 +65,8 @@ export class HomePage {
 
   GoToCamera()
   {
-    // this.navCtrl.push(CameraPage);
-    this.navCtrl.push(PreviewPage);
+    this.navCtrl.push(CameraPage);
+    // this.navCtrl.push(PreviewPage);
   }
 
   GoToAbout()

@@ -1,5 +1,5 @@
 <ion-content (ionScroll)="false">
-    <div class="col-12 pageTitle">
+    <div class="col-12 pageTitle" style="z-index: 10;">
         <button (click)="GoToHome()" class="back" style="background-color: transparent">
             <img [src]="this.btnBackImg" style="margin-top: -3vh;" />
         </button>
@@ -10,9 +10,22 @@
     </div>
 
     <div class="cameraView">
-        <img [src]="this.frameUrl" style="width: 100vw; height: 100vw; position: absolute; z-index: 10" />
-        <img [src]="this.imageUrl" style="width: 100vw; height: 100vw; z-index: 5;" />
-        <img [src]="this.frameBannerUrl" style="width: 100vw; z-index: 10;" />
+        <table border="0">
+            <tr>
+                <td style="width: 100vw; height: 100vw">
+                    <img [src]="this.frameUrl" style="width: 100vw; height: 100vw; position: absolute; z-index: 10" />
+                    <div [style.backgroundImage]="'url(' + this.imageUrl + ')'" [style.backgroundSize]="'100% 133%'" [style.backgroundPosition]="'50% 70%'" style="width:100%; height:100%;');
+                    background-repeat: no-repeat;);">
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100vw; height: auto;">
+                    <img [src]="this.frameBannerUrl" style="width: 100vw; height:auto; z-index: 10; margin-top: -3px;" />
+                </td>
+            </tr>
+        </table>
     </div>
 
     <div class="col-12 footerButtonPlane">

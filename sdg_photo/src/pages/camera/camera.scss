@@ -7,7 +7,7 @@ page-camera {
   .pageTitle
   {
     height: 10vh;
-    background-color: black;
+    background-color: transparent;
     color: white;
     text-align: center;
     padding: 3vh;
@@ -39,7 +39,7 @@ page-camera {
   .cameraView
   {
     height: 70vh;
-    background-color: black;
+    background-color: transparent;
   }
 
   .footerButtonPlane
@@ -47,7 +47,7 @@ page-camera {
     position: absolute;
     width: 100%;
     bottom: 0;
-    background-color: black;
+    background-color: transparent;
     height: 20vh;
   }
 

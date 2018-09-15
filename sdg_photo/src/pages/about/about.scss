@@ -61,11 +61,16 @@ page-about {
     left: 30%;
   }
 
+  .swiper-slide img {
+    margin: 5vw;
+    width: 90vw;
+  }
+
   .aboutContent
   {
   }
 
-  .contentTitle
+  #contentTitle
   {
     text-align: left;
     font-size: 6vw;

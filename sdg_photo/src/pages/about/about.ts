@@ -40,10 +40,8 @@ export class AboutPage {
     async ionViewWillEnter()
     {
         this.CameraChangeLanguage();
-    }
-
-
-    async ionViewDidEnter() {
+        console.log("Testing: ");
+        console.log(this.photoFrame);
         if(this.photoFrame != null)
         {
             this.slides.slideTo(Number(this.photoFrame) - 1);
@@ -51,8 +49,13 @@ export class AboutPage {
         }
         else
         {
+            console.log("Load Default");
             this.LoadContent("1");
         }
+    }
+
+
+    async ionViewDidEnter() {
     }
 
     LoadContent(index:string)
@@ -65,7 +68,8 @@ export class AboutPage {
                 this.color = data[index]["Color"];
                 this.title = data[index]["Title"][lang];
                 this.description = data[index]["Description"][lang];
-                document.getElementById('contentTitle').style.color = this.color;
+                // document.getElementById('contentTitle').style.color = this.color;
+                console.log(this.color);
             });
         });
     }

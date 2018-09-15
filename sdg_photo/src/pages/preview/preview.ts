@@ -5,11 +5,10 @@ import {SharePage} from "../Share/share";
 import { Base64ToGallery, Base64ToGalleryOptions } from '@ionic-native/base64-to-gallery';
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {HTTP} from "@ionic-native/http";
-// import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 import {Storage} from "@ionic/storage";
 import { HttpClient } from '@angular/common/http';
-
 
 @Component({
     selector: 'page-preview',
@@ -35,7 +34,7 @@ export class PreviewPage {
                 private httpClient:HttpClient,
                 private storage: Storage,
                 private loading: LoadingController,
-                // private androidPermissions: AndroidPermissions
+                private androidPermissions: AndroidPermissions
                ) {
         this.imageUrl = navParams.get("imageUrl");
         this.imageHttpUrl = navParams.get("imageHttpUrl");
@@ -43,6 +42,13 @@ export class PreviewPage {
 
     async ionViewWillEnter()
     {
+
+        // this.frameUrl = "/assets/imgs/photoframe/1.png";
+        // this.frameBannerUrl = "/assets/imgs/colorbanner/1.png";
+        // this.imageUrl = "http://devwherear.com/arms/v2/ARMS/libs/api/sdg/uploads/5b9b6818de3d6.png";
+
+
+
         const loader = this.loading.create({ spinner: 'dots' });
         loader.present();
         this.http.get('http://blacknovamedia.com/sdg_api/cam_api.php?url=' + this.imageHttpUrl, {}, {})
@@ -51,7 +57,6 @@ export class PreviewPage {
                 this.photoFrame = data.data;
                 this.frameUrl = "/assets/imgs/photoframe/" + this.photoFrame + ".png";
                 this.frameBannerUrl = "/assets/imgs/colorbanner/" + this.photoFrame + ".png";
-
                 loader.dismiss();
 
             })
@@ -130,33 +135,26 @@ export class PreviewPage {
             prefix: '_sdg',
             mediaScanner: true
         };
-        this.base64ToGallery.base64ToGallery(this.imageUrl,
-            options
-        ).then(
-            res =>
-            {
-                console.log('Saved image to gallery ', res);
-                //alert("The photo is saved");
-                this.navCtrl.push(SharePage, {imageUrl: this.imageUrl, photoFrame: this.photoFrame});
+        this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE).then(
+            result => {
+                console.log("Permissions granted", result.hasPermissions);
+                this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE]).then(
+                    result => {
+                        this.base64ToGallery.base64ToGallery(this.imageUrl,
+                            options
+                        ).then(
+                            res =>
+                            {
+                                console.log('Saved image to gallery ', res);
+                                //alert("The photo is saved");
+                                this.navCtrl.push(SharePage, {imageUrl: this.imageUrl, photoFrame: this.photoFrame});
+                            },
+                            err => console.log('Error saving image to gallery ', err)
+                        );
+                    }
+                );
             },
-            err => console.log('Error saving image to gallery ', err)
+            error => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE)
         );
-        //
-        // this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE).then(
-        //     result => {
-        //         console.log("Permissions granted", result.hasPermissions);
-        //         this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE]).then(
-        //             result => {
-        //
-        //
-        //             }
-        //         );
-        //
-        //     },
-        //     error => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE)
-        // );
-
     }
-
-
 }

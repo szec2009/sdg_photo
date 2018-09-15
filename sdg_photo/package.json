@@ -18,7 +18,7 @@
     "@angular/core": "5.2.11",
     "@angular/forms": "5.2.11",
     "@angular/http": "5.2.11",
-    "@angular/platform-browser": "5.2.11",
+    "@angular/platform-browser": "^5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/android-permissions": "^4.12.2",
     "@ionic-native/base64-to-gallery": "^4.12.2",
@@ -38,6 +38,7 @@
     "cordova-base64-to-gallery": "^4.1.3",
     "cordova-ios": "4.5.5",
     "cordova-plugin-advanced-http": "^2.0.1",
+    "cordova-plugin-android-permissions": "^1.0.0",
     "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-camera-preview": "^0.10.0",
     "cordova-plugin-device": "^2.0.2",
@@ -80,7 +81,8 @@
       "cordova-plugin-x-socialsharing": {},
       "cordova-base64-to-gallery": {},
       "cordova-plugin-advanced-http": {},
-      "cordova-sqlite-storage": {}
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-android-permissions": {}
     },
     "platforms": [
       "ios",

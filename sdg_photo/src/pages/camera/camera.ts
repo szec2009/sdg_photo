@@ -94,7 +94,6 @@ export class CameraPage {
     async GoToHome()
     {
         //this.navCtrl.push(HomePage, {});
-
         await this.camera.stopCamera();
         this.navCtrl.push(HomePage, {},  {animate: true, direction: 'back'});
     }
@@ -102,15 +101,14 @@ export class CameraPage {
     async TakePhoto()
     {
         //this.navCtrl.push(PreviewPage, {imageUrl: ""});
-
-        const pictureOpts: CameraPreviewPictureOptions = {
-            width: this.platform.width(),
-            height: this.platform.height() * 70 / 100,
-            quality: 50
-        };
-        this.camera.takePicture(pictureOpts).then((imageData) => {
+        this.camera.takePicture(
+            {
+                width: this.platform.width(),
+                height: this.platform.height() * 70 / 100,
+                quality: 50
+            }
+        ).then((imageData) => {
             var base64Data = 'data:image/png;base64,' +imageData;
-
 
             this.camera.stopCamera();
             const loader = this.loading.create({ spinner: 'dots' });
@@ -120,16 +118,10 @@ export class CameraPage {
                 headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
             })
                 .subscribe(data => {
-                        console.log("Post To Server");
-                        console.log(data);
                         loader.dismiss();
                         this.navCtrl.push(PreviewPage, {imageUrl: base64Data, imageHttpUrl: data["msg"]});
                     },
                     err => {
-                        console.log('Error: ' + err.error);
-                        console.log('Name: ' + err.name);
-                        console.log('Message: ' + err.message);
-                        console.log('Status: ' + err.status);
                         loader.dismiss();
                     });
 
@@ -141,6 +133,4 @@ export class CameraPage {
     async SwitchCamera() {
         await this.camera.switchCamera();
     }
-
-
 }
